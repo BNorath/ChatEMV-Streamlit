@@ -17,7 +17,8 @@ Welcome to my site where we discuss all things EMV. \n
 This is a work in progress so please bear with me. I will slowly add more 
 functionality over time. \n
 
-At this point in time we have the following translators available:
+At this point in time we have the following translators available: \n
+(They can be found as separate pages in the menu on the left)
 """)
 
 # list all available translators by reading translators.csv file.
