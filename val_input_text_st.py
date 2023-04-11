@@ -18,4 +18,4 @@ def validate_input():
     if len(input_str) != 10:
         st.warning("Please enter a value that contains exactly 10 characters.")
         return
-    st.success("Input value is valid.")
+    st.success("Woohoo! This is a valid TVR value.")
