@@ -1,0 +1,3 @@
+acron,tag,name,description
+TVR,[95],Terminal Verification Results,"TVR is one of the most important EMV tags produced in an EMV transaction. It is created by the terminal and is the terminal's view of what transpired in the transaction.
+TVR is a standard 5 Byte value (10 Hex characters) and this applies all Card Schemes. The EMV tag for TVR is '95'."

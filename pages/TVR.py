@@ -6,66 +6,63 @@ from str_2_dict import update_dict
 from ndicts_from_1dict import create_new_dict
 from val_input_text_st import validate_input
 
+bin_output = ""
 
+# Configure page to dynamically resize
 st.set_page_config(layout="wide")
 
+# Title of page
 st.title("TVR Translator")
 
+# Use columns to reduce width of input box
 col1, col2, col3 = st.columns(3)
-
 with col1:
-
     hex_val = st.text_input("Please enter a 5 Byte TVR value:",
                             placeholder="Enter 10 characters, valid characters are 0-9 and a-f ",
                             key="input_value",
                             on_change=validate_input,
                             max_chars=10)
 
-
+# Convert all to lower case so that comparison against check_value works
 hex_input = hex_val.lower()
 
-if hex_input:
+# Check if hex is 5 bytes long and then convert to binary
+if len(hex_input) == 10:
     st.write("")
     st.write("")
     st.write("This translates into the following binary value:")
+    bin_output = hex_2_bin(hex_input)
+    st.subheader(bin_output)
 
-
-bin_output = hex_2_bin(hex_input)
-st.subheader(bin_output)
-
+# Create new dict using existing dict with keys and new values
 full_dict = update_dict(bin_output)
-#st.write(f"full dict = {full_dict}")
+
+# Produce new dictionary with key=bytebit, value = 1
 relevant_dict = {}
 for i, v in full_dict.items():
     relevant_dict = {key: value for key, value in full_dict.items() if value == "1"}
-#st.write(relevant_dict)
 
+# create dataframe from full TVR map csv doc
 df = pd.read_csv('tvr_map.csv')
 
+# Produce new dict with key = bytebit, value = description for display at end
 for index, row in df.iterrows():
     if row['bytebit'] in relevant_dict:
         relevant_dict[row['bytebit']] = row['description']
-#st.write(f"relevant dict = {relevant_dict}")
 
+# Produce single dict with full descriptions for Checkboxes
 desc_dict = {}
 for index, row in df.iterrows():
     desc_dict[row['bytebit']] = row['description']
-#st.write(f"all bytebits for columns are: {desc_dict}")
 
+# Split single dictionary into smaller dict per checkbox column
 dict1 = create_new_dict(desc_dict, 0, 7)
 dict2 = create_new_dict(desc_dict, 8, 15)
 dict3 = create_new_dict(desc_dict, 16, 23)
 dict4 = create_new_dict(desc_dict, 24, 31)
 dict5 = create_new_dict(desc_dict, 32, 39)
 
-#st.write(f"dict1: {dict1}")
-#st.write(f"dict2: {dict2}")
-#st.write(f"dict3: {dict3}")
-#st.write(f"dict4: {dict4}")
-#st.write(f"dict5: {dict5}")
-
-
-if hex_input:
+if len(hex_input) == 10:
     st.write("")
     st.write("")
     st.write("The following TVR bits are set to True in this transaction:")
@@ -139,7 +136,7 @@ with col5:
                     disabled=True,
                     key=index)
 
-if hex_input:
+if len(hex_input) == 10:
     st.subheader("In simpler terms, the following events happened during this transaction:")
 
 notes_dict = {}
