@@ -44,10 +44,3 @@ for index, row in new_df.iterrows():
     print(row["bytebit"])
     print(row["notes"])
 
-
-# string = "1010101010101010"
-# csv_filename = "your_file.csv"
-# column_name = "your_column_name"
-#
-# result_dict = create_dict_from_csv(csv_filename, column_name, string)
-# print(result_dict)
