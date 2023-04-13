@@ -20,6 +20,7 @@ functionality over time. \n
 At this point in time we have the following translators available: \n
 (They can be found as separate pages in the menu on the left)
 """)
+st.write("")
 
 # list all available translators by reading translators.csv file.
 df = pandas.read_csv("files/translators.csv")
@@ -28,8 +29,9 @@ for index, row in df.iterrows():
     tag = (row['tag'])
     name = (row['name'])
     desc = (row['description'])
-    st.subheader(f"{acron} - {tag}")
+    st.subheader(f"{name} - {acron} {tag}")
     st.write(desc)
+    st.write("")
 
 
 
