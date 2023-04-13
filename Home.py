@@ -22,7 +22,7 @@ At this point in time we have the following translators available: \n
 """)
 
 # list all available translators by reading translators.csv file.
-df = pandas.read_csv("translators.csv")
+df = pandas.read_csv("files/translators.csv")
 for index, row in df.iterrows():
     acron = (row['acron'])
     tag = (row['tag'])
