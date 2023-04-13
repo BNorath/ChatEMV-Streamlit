@@ -5,6 +5,7 @@ import streamlit as st
 
 hex_check = "0123456789abcdef"
 
+
 def validate_input():
     input_str = st.session_state.input_value
     # Allowed characters are hexadecimal characters
@@ -19,7 +20,8 @@ def validate_input():
         return
     st.success("Yes! This is a valid value.")
 
-def validate_input_2B():
+
+def validate_input_2b():
     input_str = st.session_state.input_value
     # Allowed characters are hexadecimal characters
     allowed_chars = set(hex_check)

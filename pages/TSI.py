@@ -4,7 +4,7 @@ import pandas as pd
 from hex_2_bin import hex_2_bin
 from string_csv_2_dict import create_dict
 from ndicts_from_1dict import create_new_dict
-from val_input_text_st import validate_input_2B
+from val_input_text_st import validate_input_2b
 
 # Declare global variables
 bin_output = "0000000000000000"
@@ -23,7 +23,7 @@ with col1:
     hex_val = st.text_input("Please enter a 2 Byte TSI value:",
                             placeholder="Enter 4 characters, valid characters are 0-9 and a-f ",
                             key="input_value",
-                            on_change=validate_input_2B,
+                            on_change=validate_input_2b,
                             max_chars=4)
     if not hex_val:
         hex_val = "0000"
