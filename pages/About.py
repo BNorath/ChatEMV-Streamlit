@@ -20,8 +20,15 @@ I hope to do more versions of this website later on using frameworks like
 FLASK and DJANGO, but that's a discussion for another day.
 """)
 
-link='If you would like to learn more about EMV, please check out my YouTube training [link](https://www.youtube.com/playlist?list=PLoS9InuPCEh5-i2R2ZwU1wAjebq9mccJu)'
+link='If you would like to learn more about EMV, please check out my YouTube ' \
+     'training [link](https://www.youtube.com/playlist?' \
+     'list=PLoS9InuPCEh5-i2R2ZwU1wAjebq9mccJu)'
 st.markdown(link, unsafe_allow_html=True)
+
+link='Please find the source code for this website in my Github repository [link]' \
+     '(https://github.com/BNorath/ChatEMV-Streamlit.git)'
+st.markdown(link, unsafe_allow_html=True)
+
 
 
 
