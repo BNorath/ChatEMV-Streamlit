@@ -1,0 +1,41 @@
+bytebit,description,notes
+Byte1 bit8,Cash,This means that the terminal supports withdrawing of physical cash.
+Byte1 bit7,Goods,"This indicates that the terminal supports transactions to purchase goods, e.g. groceries, clothing etc."
+Byte1 bit6,Services,"Services refer to activities that are supplied where the labour/effort of the activity is being paid for. Examples of these would be plumbers, electricians, legal services  etc. "
+Byte1 bit5,Cashback,Refers to transactions where the cardholder may request physical cash to be paid to him/her during the same transaction where goods or services are being purchased.
+Byte1 bit4,Inquiry,"Indicates the terminal's ability to allow/support a cardholder wanting to view his account balances, e.g. ATM's."
+Byte1 bit3,Transfer,"Indicates the terminal's ability to allow/support a cardholder wanting to transfer funds between accounts held at the same bank, e.g. ATM's."
+Byte1 bit2,Payment,Indicates the terminal's ability to allow/support a cardholder wanting to pay funds from his/her account into accounts held by other account/card holders. This could be within the same bank or across different banks.
+Byte1 bit1,Administrative,"Refers to activities that the cardholder could perform that are not directly financially related. Examples would be printing of statements, changing PIN etc."
+Byte2 bit8,Cash Deposit,This means that the terminal supports depositing of physical cash.
+Byte2 bit7,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte2 bit6,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte2 bit5,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte2 bit4,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte2 bit3,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte2 bit2,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte2 bit1,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte3 bit8,Numeric keys,"The terminal supports capturing of numbers by the cardholder (1,2,3 etc) for PIN or amounts."
+Byte3 bit7,Alphabetic and special characters keys,"The terminal supports the capturing of alphabetic and special character keys (A, B, @, etc) for names, passwords etc."
+Byte3 bit6,Command keys,"Refers to keys with specific functions like enter, clear, cancel etc."
+Byte3 bit5,Function keys,"These keys are typically labeled as F1, F2, F3, and so on. They are used to access specific functions, such as voiding a transaction or printing a receipt."
+Byte3 bit4,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte3 bit3,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte3 bit2,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte3 bit1,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte4 bit8,"Print, attendant","This indicates that the terminal supports the printing of receipts through a process completed by the attendant (cashier, teller etc)."
+Byte4 bit7,"Print, cardholder",This indicates that the terminal supports the printing of receipts through a process completed by the cardholder directly without requiring any input from an attendant.
+Byte4 bit6,"Display, attendant","This means that the terminal supports the display of transaction prompts to an attendant (cashier, teller) who facilitates the transaction on the terminal. e.g. retail point of sale."
+Byte4 bit5,"Display, cardholder",This means that the terminal supports the display of transaction prompts to the cardholder directly without requiring any input from an attendant. e.g. ATM.
+Byte4 bit4,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte4 bit3,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte4 bit2,Code table 10,"This refers to the ISO 8859 standard and means that the terminal supports the Nordic language character set. This is used for processes like handling the application preferred name, displaying Nordic language, etc."
+Byte4 bit1,Code table 9,"This refers to the ISO 8859 standard and means that the terminal supports the Turkish language character set. This is used for processes like handling the application preferred name, displaying Turkish language, etc."
+Byte5 bit8,Code table 08,"This refers to the ISO 8859 standard and means that the terminal supports the Hebrew language character set. This is used for processes like handling the application preferred name, displaying Hebrew language, etc."
+Byte5 bit7,Code table 07,"This refers to the ISO 8859 standard and means that the terminal supports the Greek language character set. This is used for processes like handling the application preferred name, displaying Greek language, etc."
+Byte5 bit6,Code table 06,"This refers to the ISO 8859 standard and means that the terminal supports the Arabic language character set. This is used for processes like handling the application preferred name, displaying Arabic language, etc."
+Byte5 bit5,Code table 05,"This refers to the ISO 8859 standard and means that the terminal supports the Cyrillic language character set. This is used for processes like handling the application preferred name, displaying Cyrillic language, etc."
+Byte5 bit4,Code table 04,"This refers to the ISO 8859 standard and means that the terminal supports the N.European language character set. This is used for processes like handling the application preferred name, displaying N.European language, etc."
+Byte5 bit3,Code table 03,"This refers to the ISO 8859 standard and means that the terminal supports the S.European language character set. This is used for processes like handling the application preferred name, displaying S.European language, etc."
+Byte5 bit2,Code table 02,"This refers to the ISO 8859 standard and means that the terminal supports the C/E.European language character set. This is used for processes like handling the application preferred name, displaying C/E.European language, etc."
+Byte5 bit1,Code table 01,"This refers to the ISO 8859 standard and means that the terminal supports the W.European language character set. This is used for processes like handling the application preferred name, displaying W.European language, etc."
