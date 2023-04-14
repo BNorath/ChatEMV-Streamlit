@@ -6,13 +6,14 @@ import pandas as pd
 hex_check = "0123456789abcdef"
 
 while True:
-    hex_input = (input("Enter 5 byte hex value: ")).lower()
+    hex_input = (input("Enter 3 byte hex value: ")).lower()
 
-    if len(hex_input) != 10:
-        print("TVR value must be 5 Bytes long.(10 characters)")
+    if len(hex_input) != 6:
+        print("TVR value must be 3 Bytes long.(6 characters)")
 
     elif not all(c in hex_check for c in hex_input):
-        print("Please re-enter TVR value, Valid characters are between 0-9 and a-f.")
+        print("Please re-enter Terminal Capabilities value, "
+              "Valid characters are between 0-9 and a-f.")
 
     else:
         break
@@ -23,7 +24,7 @@ print(bin_output)
 
 # write string to a dictionary
 string = bin_output
-csv_file = "files/tvr_map.csv"
+csv_file = "../files/term_cap_map.csv"
 new_dict = create_dict(csv_file, string)
 print(new_dict)
 
@@ -35,14 +36,13 @@ for key, val in new_dict.items():
         maplist.append(key)
 print(maplist)
 
-df = pd.read_csv("files/tvr_map.csv")
+df = pd.read_csv("../files/term_cap_map.csv")
 
 new_df = df[df['bytebit'].isin(pd.Series(maplist))]
 
 for index, row in new_df.iterrows():
     print(row["bytebit"])
     print(row["notes"])
-
 
 
 

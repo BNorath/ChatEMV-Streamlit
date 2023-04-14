@@ -1,7 +1,7 @@
 
 
 import streamlit as st
-import pandas
+import pandas as pd
 
 # Configure page to resize
 st.set_page_config(layout="wide")
@@ -23,8 +23,9 @@ At this point in time we have the following translators available: \n
 st.write("")
 
 # list all available translators by reading translators.csv file.
-df = pandas.read_csv("files/translators.csv")
-for index, row in df.iterrows():
+df = pd.read_csv("files/translators.csv")
+df_sorted = df.sort_values("acron")
+for index, row in df_sorted.iterrows():
     acron = (row['acron'])
     tag = (row['tag'])
     name = (row['name'])
@@ -32,6 +33,7 @@ for index, row in df.iterrows():
     st.subheader(f"{name} - {acron} {tag}")
     st.write(desc)
     st.write("")
+
 
 
 

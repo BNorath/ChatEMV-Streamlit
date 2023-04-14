@@ -1,0 +1,25 @@
+bytebit,description,notes
+Byte1 bit8,Manual key entry,This indicates that the terminal has numeric or alpha-numeric keys/buttons available for the user to type a card number during transactions.
+Byte1 bit7,Magnetic stripe,This means that the terminal has a magstripe reader attached/built in which may be used to read Track1/Track2 data from the magstripe on the card.
+Byte1 bit6,IC with contacts,"This means that the terminal has the ability to interact with a chip card, supply power to it, and conduct a transaction with the relevant applications found on a chip card. "
+Byte1 bit5,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte1 bit4,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte1 bit3,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte1 bit2,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte1 bit1,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte2 bit8,Plaintext PIN for ICC verification,"During the Cardholder Verification stage of a transaction, the terminal is able to receive a PIN input from a cardholder and pass this PIN value in the clear to the card for the card to verify. In the clear or plaintext means that the password is passed as-is and is visible on the transaction dialogue between the terminal and card. PLEASE NOTE, visible means that specialised tools are required to intercept the dialogue between the card and terminal."
+Byte2 bit7,Enciphered PIN for online verification,"In this case, the terminal is able to request a PIN input from a cardholder, encrypt the PIN into a PIN block using cryptographic processes and artefacts, and then insert this encrypted PIN block into field 52 of the ISO 8583 message that it constructs to send online to the Issuer host."
+Byte2 bit6,Signature (paper),This indicates that the terminal is capable of printing a paper receipt which may be presented to the cardholder to physically write his/her signature on it with a pen.
+Byte2 bit5,Enciphered PIN for offline verification,"During the Cardholder Verification stage of a transaction, the terminal is able to receive a PIN input from a cardholder, encrypt the PIN using cryptographic processes and artefacts, and then pass this encrypted PIN value to the card for the card to verify. Because it is encrypted in transit between the card and terminal, the PIN may not be viewed, even with specialised tools."
+Byte2 bit4,No CVM required,"This means that the terminal supports a specifc CVM type that is standard in EMV called No CVM. No CVM allows transactions to complete without requesting verification of the cardholder, and is generally used for low value transactions where transaction volumes are high, i.e. transaction speed is a major factor. A typical example of the use of No CVM would be toll roads."
+Byte2 bit3,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte2 bit2,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte2 bit1,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte3 bit8,SDA,The terminal supports Static Offline Data Authentication. This is an older method of authenticating a chip card and is not generally used much anymore as the Schemes have mandated that cards may only be issued with support for more modern authentication methodologies like DDA and CDA.
+Byte3 bit7,DDA,This means that the terminal supports Dynamic Data Authentication as a method to verify that the chip card being used in a transaction is genuine. This is a lot more secure than the older SDA method.
+Byte3 bit6,Card capture,"This indicates that the terminal has a physical mechanism that could retain the card if this is triggered by a specific response during a transaction. Generally POS terminals do not have this capability, but ATM's do. "
+Byte3 bit5,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte3 bit4,CDA,This means that the terminal supports CombinedData Authentication as a method to verify that the chip card being used in a transaction is genuine. This is currently the most secure form of Offline Data Authentication and combines DDA with the cryptogram produced in 1st or 2nd Gen AC to authenticate the card.
+Byte3 bit3,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte3 bit2,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
+Byte3 bit1,RFU,This means that this bit is Reserved for Future Use. It has no valid meaning at this point in time and may be ignored.
