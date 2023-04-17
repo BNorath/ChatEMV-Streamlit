@@ -6,14 +6,13 @@ import pandas as pd
 hex_check = "0123456789abcdef"
 
 while True:
-    hex_input = (input("Enter 3 byte hex value: ")).lower()
+    hex_input = (input("Enter 2 byte hex value: ")).lower()
 
-    if len(hex_input) != 6:
-        print("Terminal Capabilities value must be 3 Bytes long.(6 characters)")
+    if len(hex_input) != 4:
+        print("AUC value must be 2 Bytes long.(4 characters)")
 
     elif not all(c in hex_check for c in hex_input):
-        print("Please re-enter Terminal Capabilities value, "
-              "Valid characters are between 0-9 and a-f.")
+        print("Please re-enter AUC value, Valid characters are between 0-9 and a-f.")
 
     else:
         break
@@ -24,29 +23,24 @@ print(bin_output)
 
 # write string to a dictionary
 string = bin_output
-csv_file = "../files/term_cap_map.csv"
+csv_file = "../files/auc_map.csv"
+column_name = "bytebit"
 new_dict = create_dict(csv_file, string)
-print(new_dict)
+#print(new_dict)
 
-print(f"The following settings are configured to true in the terminal:")
+print(f"The following settings are configured to True on the card:")
 maplist = []
 for key, val in new_dict.items():
     if val == "1":
         #print(key)
         maplist.append(key)
-print(maplist)
+#print(maplist)
 
-df = pd.read_csv("../files/term_cap_map.csv")
+df = pd.read_csv(csv_file)
 
 new_df = df[df['bytebit'].isin(pd.Series(maplist))]
 
 for index, row in new_df.iterrows():
     print(row["bytebit"])
     print(row["notes"])
-
-
-
-
-
-
 

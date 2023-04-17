@@ -27,7 +27,7 @@ csv_file = "../files/add_term_cap_map.csv"
 new_dict = create_dict(csv_file, string)
 print(new_dict)
 
-print(f"The following bits are set to true in the transaction:")
+print(f"The following settings are configured to true in the terminal:")
 maplist = []
 for key, val in new_dict.items():
     if val == "1":

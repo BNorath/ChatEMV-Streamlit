@@ -9,10 +9,10 @@ while True:
     hex_input = (input("Enter 2 byte hex value: ")).lower()
 
     if len(hex_input) != 4:
-        print("TVR value must be 2 Bytes long.(4 characters)")
+        print("TSI value must be 2 Bytes long.(4 characters)")
 
     elif not all(c in hex_check for c in hex_input):
-        print("Please re-enter TVR value, Valid characters are between 0-9 and a-f.")
+        print("Please re-enter TSI value, Valid characters are between 0-9 and a-f.")
 
     else:
         break
