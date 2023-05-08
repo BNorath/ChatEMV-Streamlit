@@ -23,7 +23,7 @@ print(bin_output)
 
 # write string to a dictionary
 string = bin_output
-csv_file = "files/tvr_map.csv"
+csv_file = "../files/tvr_map.csv"
 new_dict = create_dict(csv_file, string)
 print(new_dict)
 
@@ -35,7 +35,7 @@ for key, val in new_dict.items():
         maplist.append(key)
 print(maplist)
 
-df = pd.read_csv("files/tvr_map.csv")
+df = pd.read_csv("../files/tvr_map.csv")
 
 new_df = df[df['bytebit'].isin(pd.Series(maplist))]
 
