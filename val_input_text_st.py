@@ -52,3 +52,18 @@ def validate_input_3b():
         return
     st.success("Yes! This is a valid value.")
 
+
+# Validates 6 Bytes
+def validate_input_6b():
+    input_str = st.session_state.input_value
+    # Allowed characters are hexadecimal characters
+    allowed_chars = set(hex_check)
+    for char in input_str:
+        if char not in allowed_chars:
+            st.warning("Value may only have characters between 0-9 and a-f")
+            return
+    # Must be exactly 12 characters long
+    if len(input_str) != 12:
+        st.warning("Please enter exactly 12 characters.")
+        return
+    st.success("Yes! This is a valid value.")
