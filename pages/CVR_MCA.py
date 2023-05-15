@@ -105,7 +105,6 @@ if hex_input != "000000000000":
         dict_b1[row["bytebit"]] = new_list[0]
         new_list.pop(0)
 
-    print(f" Byte 1 full dict= {dict_b1}")
 
 # Create Byte 2 dictionary
     dict_b2 = {}
@@ -113,7 +112,6 @@ if hex_input != "000000000000":
     for index, row in df[12:20].iterrows():
         dict_b2[row["bytebit"]] = b2_list[0]
         b2_list.pop(0)
-    print(f" Byte 2 full dict= {dict_b2}")
 
 # Create Byte 3 dictionary
     dict_b3 = {}
@@ -121,7 +119,6 @@ if hex_input != "000000000000":
     for index, row in df[20:22].iterrows():
         dict_b3[row["bytebit"]] = b3_list[0]
         b3_list.pop(0)
-    print(f" Byte 3 full dict= {dict_b3}")
 
 # Create Byte 4 dictionary
     dict_b4 = {}
@@ -129,7 +126,6 @@ if hex_input != "000000000000":
     for index, row in df[22:30].iterrows():
         dict_b4[row["bytebit"]] = b4_list[0]
         b4_list.pop(0)
-    print(f" Byte 4 full dict= {dict_b4}")
 
 # Create Byte 5 dictionary
     dict_b5 = {}
@@ -137,7 +133,6 @@ if hex_input != "000000000000":
     for index, row in df[30:38].iterrows():
         dict_b5[row["bytebit"]] = b5_list[0]
         b5_list.pop(0)
-    print(f" Byte 5 full dict= {dict_b5}")
 
 # Create Byte 6 dictionary
     dict_b6 = {}
@@ -145,48 +140,38 @@ if hex_input != "000000000000":
     for index, row in df[38:46].iterrows():
         dict_b6[row["bytebit"]] = b6_list[0]
         b6_list.pop(0)
-    print(f" Byte 6 full dict= {dict_b6}")
-
 
 # Produce new dictionary with key=bytebit, value = 1
 
     for key, value in dict_b1.items():
         relevant_dict1 = {key: value for key, value in dict_b1.items() if
                           value == "1"}
-    print(f" Byte 1 relevant dict= {relevant_dict1}")
 
     for key, value in dict_b2.items():
         relevant_dict2 = {key: value for key, value in dict_b2.items() if
                           value == "1"}
-    print(f" Byte 2 relevant dict= {relevant_dict2}")
 
     for key, value in dict_b3.items():
         relevant_dict3 = {key: value for key, value in dict_b3.items() if
                           value != "X"}
-    print(f" Byte 3 relevant dict= {relevant_dict3}")
 
     for key, value in dict_b4.items():
         relevant_dict4 = {key: value for key, value in dict_b4.items() if
                           value == "1"}
-    print(f" Byte 4 relevant dict= {relevant_dict4}")
 
     for key, value in dict_b5.items():
         relevant_dict5 = {key: value for key, value in dict_b5.items() if
                           value == "1"}
-    print(f" Byte 5 relevant dict= {relevant_dict5}")
 
     for key, value in dict_b6.items():
         relevant_dict6 = {key: value for key, value in dict_b6.items() if
                           value == "1"}
-    print(f" Byte 6 relevant dict= {relevant_dict6}")
-
 
 # Produce single dict with full descriptions for Checkboxes
 desc_dict = {}
 for index, row in df.iterrows():
     desc_dict[row['bytebit']] = row['description']
 
-print(f"full dict for desc = {desc_dict} ")
 
 # Split single dictionary into smaller dict per checkbox column
 dict1 = create_new_dict(desc_dict, 0, 11)
